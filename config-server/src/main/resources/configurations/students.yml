@@ -1,0 +1,29 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8090
+spring:
+  application:
+    name: students
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=MATRICULAS_ACADEMIA;integratedSecurity=false;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: Valuetech@123
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      database: sqlserver
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+
